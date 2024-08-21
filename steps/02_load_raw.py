@@ -42,7 +42,7 @@ def load_all_raw_tables(session):
 
     for s3dir, data in TABLE_DICT.items():
         tnames = data['tables']
-        schema = data['schema']
+        schema = 'HOL_DB.' + data['schema']
         for tname in tnames:
             print("Loading {}".format(tname))
             # Only load the first 3 years of data for the order tables at this point
